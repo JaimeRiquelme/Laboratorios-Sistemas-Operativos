@@ -17,11 +17,18 @@ Este laboratorio tiene como objetivo aplicar técnicas de programación imperati
 
 0. Se requiere un sistema operativo linux-based.
 1. Compilar mediante el comando `make`.
-2. Para ejecutar, debes estar conciente de las siguientes definiciones para los flags:
-   - `-N`: es el número de celdas.
-   - `-i`: es el archivo con el bombardeo (archivo de entrada).
-   - `-o`: es el archivo de salida.
-   - `-D`: bandera o flag que permite indicar si se quiere ver por consola la cantidad de celdas de material.
+2. Para ejecutar debes estar conciente de las siguientes definiciones para los flags:
+
+```
+ -N: es el número de celdas
+ 
+ -i: es el archivo con el bombardeo (archivo de entrada)
+ 
+ -o: es el archivo de salida
+ 
+ -D: bandera o flag que permite indicar si se quiere ver por consola la cantidad de celdas de
+material.
+```
 
 3. Ejemplo de comando para ejecutar:
    ```
@@ -48,9 +55,28 @@ Procesos hijos y comunicación entre procesos implementando uso de fork(), execv
 
 0. Se requiere un sistema operativo linux-based.
 1. Compilar mediante el comando `make`.
-2. Para ejecutar, debes estar conciente de las siguientes definiciones para los flags:
-   - `-N`: es el número de celdas.
-   - `-i`: es el archivo con el bombardeo (archivo de entrada).
+2. Para ejecutar debes estar conciente de las siguientes definiciones para los flags:
+
+```
+ -N: es el número de celdas
+ 
+ -P: es el número de procesos (workers)
+ 
+ -i: es el archivo con el bombardeo (archivo de entrada)
+ 
+ -o: es el archivo de salida
+ 
+ -c: es el número de chuck, es decir, cantidad de líneas a leer por chunk.
+ 
+ -D: bandera o flag que permite indicar si se quiere ver por consola la cantidad de celdas de
+material.
+```
+
+3. Ejemplo de comando para ejecutar:
+
+```{c}
+./lab2 -N 35 -P 5 -c 2 -i test1_35.txt -o output.txt -D
+```
 
 #### Descripción del Laboratorio 2
 
