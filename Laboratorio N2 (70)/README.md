@@ -14,9 +14,13 @@ Procesos hijos y comunicación entre procesos implementando uso de fork(), execv
 ```
  -N: es el número de celdas
  
+ -P: es el número de procesos (workers)
+ 
  -i: es el archivo con el bombardeo (archivo de entrada)
  
  -o: es el archivo de salida
+ 
+ -c: es el número de chuck, es decir, cantidad de líneas a leer por chunk.
  
  -D: bandera o flag que permite indicar si se quiere ver por consola la cantidad de celdas de
 material.
@@ -25,7 +29,7 @@ material.
 3. Ejemplo de comando para ejecutar:
 
 ```{c}
-./lab1 -N 5 -i input.txt -o output.txt -D
+./lab2 -N 35 -P 5 -c 2 -i test1_35.txt -o output.txt -D
 ```
 
 _| obs: El programa está preparado para valores erróneos que puedan ser ingresados y tampoco importa el orden en que ingreses los flags_
@@ -63,6 +67,19 @@ A continuacion un ejemplo para `N = 35`
 33 1295.642004
 34 1265.731283
 ```
+
+### Para efectos de este proyecto existen mínimo 3 procesos: 1 lab2, 1 broker y P workers. 
+
+- La tarea de lab2 es recibir y validar las flags y luego enviarlas al broker.
+
+- La tarea de broker es crear los P procesos hijos.
+
+- Luego broker lee el archivo linea a linea hasta enviar `c` líneas a un worker seleccionado al azar, luego selecciona otro y le envia `c` líneas hasta que se haya leído todo el archivo de entrada.
+
+- el worker con la información recibida calculará la energía disipada por las particulas y la enviara al broker.
+
+- el broker se encarga de combinar estas soluciones por los workers y finalmente escribe el archivo con la salida.
+
 
 
 ### Contacto
