@@ -1,5 +1,5 @@
-# Sistemas Operativos: Laboratorio 2 
-Procesos hijos y comunicación entre procesos implementando uso de fork(), execv(), dup2, pipe() 
+# Sistemas Operativos: Laboratorio 1 
+Este laboratorio tiene como objetivo aplicar técnicas de programación imperativa mediante lenguaje C, como la recepción de parámetros mediante getopt y compilación mediante Makefile sobre sistema operativo Linux. 
 
 ## Autor: Jaime Riquelme & Byron Caices
 
